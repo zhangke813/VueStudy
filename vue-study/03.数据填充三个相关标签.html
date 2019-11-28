@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- vue 核心库 -->
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<!-- vue ajax 扩展插件,用于读取服务器数据 -->
+		<script src="js/vue-resource.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>	
+		[v-clock]{
+			display: none;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<div v-clock>{{msg}}</div>
+			<!-- 纯文本 没有闪烁 -->
+			<div v-text='msg'></div>
+			
+			<!-- v-html存在安全问题本网站内部数据可以使用,来自第三方数据不可以使用 -->
+			<div v-html='msg1'></div>
+			
+			<!-- v-pre 填充原始信息,跳过编译过程 -->
+			<div v-pre>{{msg}}</div>
+		</div>
+		
+		<script type="text/jscript">
+			var vm=new Vue({
+				
+				el:'#app',//元素挂在位置,css选择器或者dom元素
+				data:{//数据模型
+					msg:'hello world',
+					msg1:'<h1>HTML</<h1>'
+				}
+			})
+		</script>
+	</body>
+</html>

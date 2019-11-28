@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- vue 核心库 -->
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<!-- vue ajax 扩展插件,用于读取服务器数据 -->
+		<script src="js/vue-resource.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>	
+	</style>
+	<body>
+		<!-- 基本使用步骤 -->
+		<!-- 
+		 1.提供标签用于填充数据
+		 2.引入vue.js文件
+		 3.可以使用vue的语法功能了
+		 4.可以把vue提供的的数据-->
+		<div id="app">
+			<!-- 插值表达式 -->
+			<div>{{msg}}</div>
+		</div>
+		
+		<script type="text/jscript">
+			var vm=new Vue({
+				
+				el:'#app',//元素挂在位置,css选择器或者dom元素
+				data:{//数据模型
+					msg:'hello world'
+				}
+			})
+		</script>
+	</body>
+</html>

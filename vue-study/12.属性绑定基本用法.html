@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- vue 核心库 -->
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<!-- vue ajax 扩展插件,用于读取服务器数据 -->
+		<script src="js/vue-resource.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>	
+	</style>
+	<body>
+		<div id="app">
+			<a v-bind:href="url">百度</a>
+			<button v-on:click="handle">切换</button>
+		</div>
+		
+		<script type="text/jscript">
+			var vm=new Vue({
+				//属性绑定
+				el:'#app',
+				data:{
+					url:'http://www.baidu.com'
+				},
+				methods:{
+					handle:function(){
+						//修改url地址
+						this.url='http://itcast.cn'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

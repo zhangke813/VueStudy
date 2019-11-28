@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- vue 核心库 -->
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<!-- vue ajax 扩展插件,用于读取服务器数据 -->
+		<script src="js/vue-resource.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>	
+	</style>
+	<body>
+		<div id="app">
+			<form>
+				<div>
+					ID:<input type="text" v-on:keyup.delete="clearContent" v-model="uname"/>
+				</div>
+				<div>
+					<!-- 按键修饰符 -->
+					passward:<input type="text" v-on:keyup.enter="handleSubmit" v-model="pwd"/>
+				</div>
+				<div>
+					<input type="button"  v-on:click="handleSubmit" value="提交" />
+				</div>
+			</form>
+		</div>
+		
+		<script type="text/jscript">
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					uname:'',
+					pwd:''
+				
+				},
+				methods:{
+					handleSubmit:function(){
+						console.log(this.uname,this.pwd)
+					},
+					clearContent:function(){
+						//按delete键清空用户名
+						this.uname='';
+					}
+					
+				}
+				
+			})
+		</script>
+	</body>
+</html>

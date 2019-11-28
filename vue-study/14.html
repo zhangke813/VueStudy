@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- vue 核心库 -->
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<!-- vue ajax 扩展插件,用于读取服务器数据 -->
+		<script src="js/vue-resource.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.active{
+				border: 1px solide red;
+				width: 100px;
+				height: 100px;
+			}
+			.text-danger{
+				background: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="app">
+			
+			<div v-bind:class="{active:isActive}"></div> 
+			
+			
+			<!-- 第二种方式直接绑定对象
+				<div v-bind:class="classObject"></div> 
+			-->
+			
+			<!-- 绑定返回对象计算属性 -->
+			<!-- <div v-bind:class="classObject"></div>-->
+			
+			<!-- 数组语法 -->
+			<!-- <div v-bind:class="[activeClass,errorClass]"></div> -->
+			
+			<!-- 通过三元表达式切换列表中的class -->
+			<!-- errorclass是始终存在的,isActive为true时添加activeClass类 -->
+			<!-- <div v-bind:class="[errorClass,isActive ? activeClass:'']"></div> -->
+			
+			<!-- 直接设置样式 -->
+			<!-- <div v-bind:style="{color:activeColor,fontSize:fontSize+'px'}">菜菜鸟教程</div> -->
+			
+			<!-- 绑定样式对象 -->
+			<!-- <div v-bind:style="styleObject">菜鸟教程</div> -->
+			
+			<!-- 使用数组将多个样式对象绑定到一个元素上 -->
+			<!-- <div v-bind:style="[baseStyles,overridingStyles]">菜菜菜鸟教程</div> -->
+
+		</div>
+		<script type="text/jscript">
+			new Vue({
+				el:'#app',
+				data:{
+					//直接绑定样式
+					isActive:true,
+					//hasError:true,
+					
+					//直接绑定对象
+					//classObject:{
+					//active:true,
+					//'text-danger':true
+					//},
+					
+					//绑定返回对象计算属性
+					//isActive:true,
+					//error:{
+					//	value:false,
+					//	type:'fatal'
+					//}
+					
+					//绑定数组
+					//activeClass:'active',
+					//errorClass:'text-danger'
+					
+					//三元表达式
+					//isActive:true,
+					//activeClass:'active',
+					//errorClass:'text-danger'
+					
+					// 直接设置样式
+					//activeColor:'yellow',
+					//fontSize:30
+					
+					//绑定样式对象
+					// styleObject:{
+					// 	color:'red',
+					// 	fontSize:'30px'
+					// }
+					
+					// baseStyles:{
+					// 	color:'green',
+					// 	fontSize:'30px'
+					// },
+					// overridingStyles:{
+					// 	'font-weight':'bold'
+					// }
+					
+				}
+				// computed:{
+				// 	//绑定返回对象计算属性
+				// 	classObject:function(){
+				// 		return{
+				// 			base:true,
+				// 			active:this.isActive && this.error.value,
+				// 			'text-danger':this.error.value && this.error.type==='fatal',
+				// 		}
+				// 	}
+				// }
+				
+			})
+		</script>
+	</body>
+</html>
